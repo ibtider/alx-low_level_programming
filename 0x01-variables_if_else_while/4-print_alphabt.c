@@ -1,29 +1,20 @@
-
-File metadata and controls
-
-Code
-
-Blame
-21 lines (20 loc) · 258 Bytes
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
- * main - Prints the alphabet except the letters q and e.
-(*
- * Return: 0 on success
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char c = 'a';
+	char alpha[] = "abcdfghijklmnoprstuvwxyz";
+	int i;
 
-	while (c <= 'z')
+	for (i = 0; i < 24 ; i++)
 	{
-		if (c != 'q' && c != 'e')
-		{
-			putchar(c);
-		}
-		c++;
+		putchar(alpha[i]);
 	}
 	putchar('\n');
 	return (0);
 }
-
