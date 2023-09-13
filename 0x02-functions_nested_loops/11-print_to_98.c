@@ -1,26 +1,32 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - list all natural numbers multiples of 3 & 5
+ * print_to_98 - prints numbers to 98
+ * @n: starting integer
  *
- * Return: Always 0.
+ * Description: prints all natural number from n - 98
+ *
+ * Return: void
  */
 
-int main(void)
+void print_to_98(int n)
 {
-	int num, sum;
-
-	sum = 0;
-
-	for (num = 0; num < 1024; num++)
+	if (n < 98)
 	{
-		if (num % 3 == 0 || num % 5 == 0)
+		while (n < 98)
 		{
-			sum += num;
+			printf("%d, ", n);
+			n++;
 		}
 	}
-
-	printf("%d\n", sum);
-
-	return (0);
+	else if (n > 98)
+	{
+		while (n > 98)
+		{
+			printf("%d, ", n);
+			n--;
+		}
+	}
+	printf("98\n");
 }
