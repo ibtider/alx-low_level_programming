@@ -1,20 +1,28 @@
 #include "main.h"
 
 /**
- * more_numbers - loop some numbers
+ * print_diagonal - draws a diagonal line on the terminal
+ * @n: number of times the character \ should be printed
  */
-void more_numbers(void)
+void print_diagonal(int n)
 {
-	int i, j;
-
-	for (i = 0; i < 10; i++)
+	if (n <= 0)
 	{
-		for (j = 0; j <= 14; j++)
-		{
-			if (j >= 10)
-				_putchar((j / 10) + '0');
-			_putchar((j % 10) + '0');
-		}
 		_putchar('\n');
+	} else
+	{
+		int i, j;
+
+		for (i = 0; i < n; i++)
+		{
+			for (j = 0; j < n; j++)
+			{
+				if (j == i)
+					_putchar('\\');
+				else if (j < i)
+					_putchar(' ');
+			}
+			_putchar('\n');
+		}
 	}
 }
