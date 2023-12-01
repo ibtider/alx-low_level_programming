@@ -1,28 +1,81 @@
 #include "3-calc.h"
 
 /**
- * get_op_func - select the op function
- * @s: input
- * Return: int
+ * op_add - add calc
+ * @a: input
+ * @b: input
+ * Return: res
  */
-
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i = 0;
+	int res;
 
-	while (i < 5)
+	res = a + b;
+	return (res);
+}
+
+/**
+ * op_sub - sub calc
+ * @a: input
+ * @b: input
+ * Return: res
+ */
+int op_sub(int a, int b)
+{
+	int res;
+
+	res = a - b;
+	return (res);
+}
+
+/**
+ * op_mul - mul calc
+ * @a: input
+ * @b: input
+ * Return: res
+ */
+int op_mul(int a, int b)
+{
+	int res;
+
+	res = a * b;
+	return (res);
+}
+
+/**
+ * op_div - div calc
+ * @a: input
+ * @b: input
+ * Return: res
+ */
+int op_div(int a, int b)
+{
+	int res;
+
+	if (b == 0)
 	{
-		if (strcmp(s, ops[i].op) == 0)
-			return (ops[i].f);
-		i++;
+		printf("Error\n");
+		exit(100);
 	}
-	return (0);
+	res = a / b;
+	return (res);
+}
+
+/**
+ * op_mod - mod calc
+ * @a: input
+ * @b: input
+ * Return: res
+ */
+int op_mod(int a, int b)
+{
+	int res;
+
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	res = a % b;
+	return (res);
 }
